@@ -94,7 +94,7 @@ def findWords(grid, row, column, visited, current_word, master_word_list, valid_
   return valid_words
 
 # Fill word list
-with open("G:\My Drive\Projects\GamePigeon\words.txt") as file:
+with open("words.txt") as file:
 #with open("words.txt") as file:
   for word in file:
     word_list.add(word.strip().lower())
