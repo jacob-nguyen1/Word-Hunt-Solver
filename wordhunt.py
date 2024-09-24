@@ -115,23 +115,7 @@ for i in range(0,4):
     all_valid_words.update(findWords(word_grid, i, j, set(), "", temp_list, set(), [['-','-','-','-'],['-','-','-','-'],['-','-','-','-'],['-','-','-','-']]))
     print()
 
-
-"""print(f"8+ letter words: {' '.join([word for word in all_valid_words if len(word) >= 8])}")
-for i in range(7,2,-1):
-  print(f"{i} letter words: {' '.join([word for word in all_valid_words if len(word) == i])}")"""
-
 print("####")
-"""for grid in all_grids:
-  if findGridWordLength(grid) >= 8:
-    printGrid(grid)
-    print("####")
-    input()
-for i in range(7,-1,-1):
-  for grid in all_grids:
-    if findGridWordLength(grid) == i:
-      printGrid(grid)
-      print("####")
-      input()"""
 for grid in all_grids:
   if findGridWordLength(grid) == 6:
     printGrid(grid)
