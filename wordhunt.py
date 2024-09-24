@@ -51,10 +51,7 @@ def getNeighbors(row, column):
   
 # Find words
 def findWords(grid, row, column, visited, current_word, master_word_list, valid_words, current_word_grid):
-  #debugging
-  #print(f"Testing word: {current_word}")
-  #print(f"Does any word in master list start with {current_word}?: {any(word.startswith(current_word) for word in master_word_list)}")
-
+  
   # Stops recursive call if the tile is already used or if the letters in current word can't form any larger words
   if (row, column) in visited or not any(word.startswith(current_word) for word in master_word_list):
     return valid_words
@@ -68,8 +65,6 @@ def findWords(grid, row, column, visited, current_word, master_word_list, valid_
 
   # If current word is a word then add it to valid words
   if current_word not in valid_words and len(current_word) >= 3:
-    #print(current_word)
-    #print(master_word_list)
     if current_word in master_word_list and current_word not in all_valid_words:
       if len(current_word) >= 7:
         print(current_word) 
@@ -85,7 +80,6 @@ def findWords(grid, row, column, visited, current_word, master_word_list, valid_
 
   # For each neighbor of current tile, recursively run the function with neighbor
   for neighbor in getNeighbors(row,column):
-    #debug_cn = neighbor
     findWords(grid, neighbor[0], neighbor[1], visited, current_word, master_word_list, valid_words, current_word_grid)
 
   current_word_grid[row][column] = '-'
@@ -95,7 +89,6 @@ def findWords(grid, row, column, visited, current_word, master_word_list, valid_
 
 # Fill word list
 with open("words.txt") as file:
-#with open("words.txt") as file:
   for word in file:
     word_list.add(word.strip().lower())
 
