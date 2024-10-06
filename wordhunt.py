@@ -115,6 +115,7 @@ for i in range(0,4):
     all_valid_words.update(findWords(word_grid, i, j, set(), "", temp_list, set(), [['-','-','-','-'],['-','-','-','-'],['-','-','-','-'],['-','-','-','-']]))
     print()
 
+# Prints 6 letter grids and below (ordered by length, descending), one at a time
 print("####")
 for grid in all_grids:
   if findGridWordLength(grid) == 6:
